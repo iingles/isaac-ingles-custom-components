@@ -1,6 +1,5 @@
 <template>
      <v-row>
-        
         <v-col
             v-for="(server, serverKey) in servers" :key="serverKey"
         >
@@ -19,8 +18,9 @@
 export default {
     props: {
         servers: Array
-    }
+    },
 }
+
 </script>
 
 <style scoped>

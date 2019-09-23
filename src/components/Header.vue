@@ -37,7 +37,10 @@
 <script>
 export default {
   props: {
-    pagetitle: String,
+    pagetitle: {
+      type: String,
+      Default: 'System Administration'    
+    },
     pagesubtitle: String,
     showServerStatus: Boolean
   },

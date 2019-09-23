@@ -53,7 +53,7 @@ export default {
       { 
         serverName: 'Server Four',
         serverStatus: 'Warning',
-        serverMsg: 'Maximum number of users'
+        serverMsg: 'Maximum number of connections'
       },
       { 
         serverName: 'Server Five',
@@ -61,7 +61,7 @@ export default {
         serverMsg: 'Connection Error'
       },
     ],
-    pagetitle: 'Lorem Ipsum',
+    pagetitle: '',
     pagesubtitle: 'Dolor sit amet'
   }),
   methods: {
