@@ -1,40 +1,17 @@
 <template>
-
-<!-- Vuetify docs say to include the drawer, app-bar, and app-footer outside 
-of 'content'; I think it would be a little too messy to create individual 
-components for them -->
   <v-app>
-    <v-navigation-drawer 
-    app
-    fixed
-    v-model="drawer"
-    >
-    </v-navigation-drawer>
-
-    <v-app-bar 
-    app
-    absolute
-    color="indigo darken-4"
-    dark
-    >
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer;"
-      ></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Server Management</v-toolbar-title>
-
-      <div class="flex-grow-1"></div>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <Header 
+      :pagetitle='this.pagetitle'
+      :pagesubtitle='this.pagesubtitle'
+      :showServerStatus="this.showServerStatus"
+      @showServers="this.showServers"
+    />
     <v-content>
-      <Header 
-        :pagetitle='this.pagetitle'
-        :pagesubtitle='this.pagesubtitle'
+      <MainContent 
+        :servers="this.servers"
+        :showServerStatus="this.showServerStatus"
       />
-      <MainContent />
-    </v-content>
+    </v-content>    
     <v-footer
       height="50"
       color="indigo darken-4" 
@@ -56,35 +33,41 @@ export default {
     MainContent
   },
   data: () => ({
-    drawer: null,
-    serverObj: {
-      name: serverName,
-      status: serverStatus
-    },
+    showServerStatus: false,
     servers: [
       { 
         serverName: 'Server One',
-        serverStatus: 'Good'
+        serverStatus: 'Optimal',
+        serverMsg: 'No Messages'
       },
       { 
         serverName: 'Server Two',
-        serverStatus: 'Running Diagnostics'
+        serverStatus: 'Warning',
+        serverMsg: 'Running Diagnostics'
       },
       { 
         serverName: 'Server Three',
-        serverStatus: 'Optimal'
+        serverStatus: 'Optimal',
+        serverMsg: 'No Messages'
       },
       { 
         serverName: 'Server Four',
-        serverStatus: 'Warning'
+        serverStatus: 'Warning',
+        serverMsg: 'Maximum number of users'
       },
       { 
         serverName: 'Server Five',
-        serverStatus: 'Error'
+        serverStatus: 'Error',
+        serverMsg: 'Connection Error'
       },
     ],
     pagetitle: 'Lorem Ipsum',
     pagesubtitle: 'Dolor sit amet'
   }),
+  methods: {
+    showServers: function() {
+      this.showServerStatus = !this.showServerStatus;
+    }
+  }
 };
 </script>
