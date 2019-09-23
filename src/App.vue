@@ -57,26 +57,30 @@ export default {
   },
   data: () => ({
     drawer: null,
+    serverObj: {
+      name: serverName,
+      status: serverStatus
+    },
     servers: [
       { 
-        name: 'Server One',
-        status: 'Good'
+        serverName: 'Server One',
+        serverStatus: 'Good'
       },
       { 
-        name: 'Server Two',
-        status: 'Running Diagnostics'
+        serverName: 'Server Two',
+        serverStatus: 'Running Diagnostics'
       },
       { 
-        name: 'Server Three',
-        status: 'Optimal'
+        serverName: 'Server Three',
+        serverStatus: 'Optimal'
       },
       { 
-        name: 'Server Four',
-        status: 'Warning'
+        serverName: 'Server Four',
+        serverStatus: 'Warning'
       },
       { 
-        name: 'Server Five',
-        status: 'Error'
+        serverName: 'Server Five',
+        serverStatus: 'Error'
       },
     ],
     pagetitle: 'Lorem Ipsum',
