@@ -4,12 +4,15 @@
       :pagetitle='this.pagetitle'
       :pagesubtitle='this.pagesubtitle'
       :showServerStatus="this.showServerStatus"
+      :showUserStatus="this.showUserStatus"
       @showServers="this.showServers"
+      @showUsers="this.showUsers"
     />
     <v-content>
       <MainContent 
         :servers="this.servers"
         :showServerStatus="this.showServerStatus"
+        :showUserStatus="this.showUserStatus"
       />
     </v-content>    
     <v-footer
@@ -34,6 +37,7 @@ export default {
   },
   data: () => ({
     showServerStatus: false,
+    showUserStatus: false,
     servers: [
       { 
         serverName: 'Server One',
@@ -61,12 +65,17 @@ export default {
         serverMsg: 'Connection Error'
       },
     ],
-    pagetitle: '',
+    pagetitle:'System Administration',
     pagesubtitle: 'Dolor sit amet'
   }),
   methods: {
     showServers: function() {
+      this.pagetitle = !this.showServerStatus ? 'Server Management' : 'System Administration';
       this.showServerStatus = !this.showServerStatus;
+    },
+    showUsers: function() {
+      this.pagetitle = !this.showUserStatus ? 'User Management' : 'System Administration';
+      this.showUserStatus = !this.showUserStatus;
     }
   }
 };

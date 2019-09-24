@@ -5,21 +5,39 @@
                 v-if="showServerStatus"
                 :servers="this.servers"
             />
+            <Users 
+                v-if="showUserStatus"
+            />
         </v-row>
     </div>
 </template>
 
 <script>
 import ServerManagement from './ServerManagement'
+import Users from './Users'
 
 export default {
     components: {
-        ServerManagement
+        ServerManagement,
+        Users
     },
         props: {
         servers: Array,
-        showServerStatus: Boolean
+        showServerStatus: Boolean,
+        showUserStatus: Boolean
     },
+    watch: {
+        showServerStatus: function() {
+            if(this.showServerStatus) {
+                this.$emit('serverStatus');
+            }
+        },
+        showUserStatus: function() {
+            if(this.showUserStatus) {
+                 this.$emit('userStatus'); 
+            }
+        }
+    }
 
 }
 </script>
