@@ -8,6 +8,7 @@
       :showServerStatus="this.showServerStatus"
       :showUserStatus="this.showUserStatus"     
     />
+    <!-- I can recieve the emitted data by doing 'data = $event' -->
     <v-content>
       <MainContent 
         :servers="this.servers"

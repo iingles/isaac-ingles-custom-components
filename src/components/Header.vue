@@ -52,7 +52,11 @@
 <script>
 export default {
   props: {
-    pagetitle: String,
+    pagetitle: {
+      type: String,
+      default: "System Administration"
+      //I can also pass functions as props!
+    },
     pagesubtitle: String,
     showServerStatus: Boolean,
     showUserStatus: Boolean
@@ -66,6 +70,7 @@ export default {
     },
     showUsers: function() {
      this.$emit('showUsers');
+     //I can use a second argument to pass data...
     }
   }
 }
