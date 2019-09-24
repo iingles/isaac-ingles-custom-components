@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <Header 
+      @showServers="this.showServers"
+      @showUsers="this.showUsers"
       :pagetitle='this.pagetitle'
       :pagesubtitle='this.pagesubtitle'
       :showServerStatus="this.showServerStatus"
-      :showUserStatus="this.showUserStatus"
-      @showServers="this.showServers"
-      @showUsers="this.showUsers"
+      :showUserStatus="this.showUserStatus"     
     />
     <v-content>
       <MainContent 
@@ -65,6 +65,16 @@ export default {
         serverMsg: 'Connection Error'
       },
     ],
+    users: [
+      {
+        userName: 'John Doe',
+        Level: 'Administrator'
+      },
+      {
+        userName: 'Jane Dee',
+        Level: 'User'
+      }
+    ], 
     pagetitle:'System Administration',
     pagesubtitle: 'Dolor sit amet'
   }),

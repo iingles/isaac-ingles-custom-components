@@ -1,6 +1,8 @@
 <template>
     <v-row>
-       <p>Users go here</p>
+       <v-card>
+           
+       </v-card>
     </v-row>
 </template>
 
