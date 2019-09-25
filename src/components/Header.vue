@@ -13,9 +13,25 @@
         <v-toolbar-title>{{ pagetitle }}</v-toolbar-title>
 
         <div class="flex-grow-1"></div>
-        <v-btn icon>
+        <v-form v-if="searchInput">
+          <v-text-field
+            rounded
+            placeholder="search"
+            single-line
+            light
+            background-color="white"
+            class="search-text"
+          >
+
+        </v-text-field>
+        </v-form>
+        <v-btn 
+        icon
+        @click.stop="searchInput = !searchInput"
+        >
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
+        
     </v-app-bar>
       <v-navigation-drawer 
         app
@@ -62,14 +78,15 @@ export default {
     showUserStatus: Boolean
   },
   data: () => ({
-    drawer: null
+    drawer: null,
+    searchInput: null,
   }),
   methods: {
     showServers: function() {
      this.$emit('showServers');
     },
     showUsers: function() {
-     this.$emit('showUsers');
+     this.$emit('showUsers', !this.showUserStatus);
      //I can use a second argument to pass data...
     }
   }
@@ -80,5 +97,7 @@ export default {
   .header {
     padding: 10px 25px;
   }
-
- </style>
+  .v-form {
+    margin-top: 18px;
+  }
+</style>

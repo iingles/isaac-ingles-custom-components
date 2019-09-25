@@ -2,7 +2,7 @@
   <v-app>
     <Header 
       @showServers="this.showServers"
-      @showUsers="this.showUsers"
+      @showUsers="this.showUserStatus = $event"
       :pagetitle='this.pagetitle'
       :pagesubtitle='this.pagesubtitle'
       :showServerStatus="this.showServerStatus"
@@ -85,8 +85,8 @@ export default {
       this.showServerStatus = !this.showServerStatus;
     },
     showUsers: function() {
-      this.pagetitle = !this.showUserStatus ? 'User Management' : 'System Administration';
-      this.showUserStatus = !this.showUserStatus;
+      //this.pagetitle = !this.showUserStatus ? 'User Management' : 'System Administration';
+      //this.showUserStatus = !this.showUserStatus;
     }
   }
 };
