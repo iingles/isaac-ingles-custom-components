@@ -16,24 +16,20 @@
         :showUserStatus="this.showUserStatus"
       />
     </v-content>    
-    <v-footer
-      height="50"
-      color="indigo darken-4" 
-      dark
-    >
-    Footer stuff
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Header from './components/Header';
-import MainContent from './components/MainContent';
+import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
+import MainContent from './components/shared/MainContent';
 
 export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     MainContent
   },
   data: () => ({

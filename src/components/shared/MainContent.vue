@@ -13,13 +13,12 @@
 </template>
 
 <script>
-import ServerManagement from './ServerManagement'
-import Users from './Users'
+import ServerManagement from '../server/ServerManagement'
+
 
 export default {
     components: {
         ServerManagement,
-        Users
     },
         props: {
         servers: Array,
