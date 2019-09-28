@@ -1,6 +1,6 @@
 <template>
-     <v-row>
-        <v-col sm-1 
+     <v-row sm-12>
+        <div
             v-for="(server, serverKey) in servers" :key="serverKey"
         >
             <v-card class="server-info">
@@ -9,8 +9,18 @@
                 </v-card-title>
                 <p>Status:<span class="server-status" :class="server.serverStatus">{{ server.serverStatus }}</span></p>
                 <p>Message:<span class="server-message">{{ server.serverMsg }}</span></p>
+                <v-btn
+                    @click="refreshServer(server.serverName)"
+                >
+                    Refresh
+                </v-btn>
+                <v-btn
+                    @click="optimizeServer(server.serverName)"
+                >
+                    Change Status
+                </v-btn>
             </v-card>
-        </v-col>        
+        </div>        
     </v-row>
 </template>
 
@@ -28,12 +38,34 @@ export default {
     data: () => ({
         servers: dataBus.servers
     }),
-    created() {
-        dataBus.$on('createdList', (servers) => {
-        this.servers = servers;
-        console.log(this.servers);
-    });
-    },
+    methods: {
+        refreshServer: function(inServer) {
+            var vm = this;
+            //get an updated list of the servers directly from the source array
+            let getServers = dataBus.servers
+            console.log(inServer)
+            for(let i = 0; i < getServers.length; i++) {
+
+                if(getServers.serverName == inServer) {
+                    //update this component's server directly from the source
+                    vm.servers[i] = getServers[i];                    
+                }
+            }
+        },
+        optimizeServer: function(inServer) {
+            var vm = this;
+            //get an updated list of the servers directly from the source array
+            let getServers = dataBus.servers
+            //update the global data in dataBus
+            for(let i = 0; i < getServers.length; i++) {
+                if(getServers[i].serverName == inServer) {
+                    if(getServers[i].serverStatus == 'Warning') {
+                        getServers[i].serverStatus = 'Optimal'
+                    } else { getServers[i].serverStatus = 'Warning' }
+                }
+            }
+        }
+    }
 
 }
 
@@ -47,7 +79,7 @@ export default {
     }
 
     .server-info {
-        min-height: 300px;
+        height: 300px;
         padding: 10px;
     }
     .server-status {
