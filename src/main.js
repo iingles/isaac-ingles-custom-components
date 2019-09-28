@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 
-export const serverBus = new Vue();
+export const dataBus = new Vue();
 
 new Vue({
   vuetify,

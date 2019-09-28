@@ -10,10 +10,10 @@
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
 
-        <v-toolbar-title>{{ pagetitle }}</v-toolbar-title>
+        <v-toolbar-title>{{ thePageTitle }}</v-toolbar-title>
 
         <div class="flex-grow-1"></div>
-        <v-form v-if="searchInput">
+        <!-- <v-form v-if="searchInput">
           <v-text-field
             rounded
             placeholder="search"
@@ -30,7 +30,7 @@
         @click.stop="searchInput = !searchInput"
         >
           <v-icon>mdi-magnify</v-icon>
-        </v-btn>
+        </v-btn> -->
         
     </v-app-bar>
       <v-navigation-drawer 
@@ -39,55 +39,42 @@
         v-model="drawer"
         class="nav-drawer"
       >
-        <v-btn 
-        block
-        @click="showServers()"
-        >
-          <template v-if="!showServerStatus">
-            Show Server Status
-          </template>
-          <template v-else>
-            Hide Server Status
-          </template>        
-        </v-btn>
-        <v-btn 
-          block
-          @click="showUsers()" 
-        >
-          <template v-if="!showUserStatus">
-            Show User Status
-          </template>
-          <template v-else>
-            Hide User Status
-          </template>        
-        </v-btn>
+        <div v-for="(page, titleKey) in this.pageTitles" :key="titleKey">
+          <DrawerButton 
+            :buttonText = page
+            @buttonClick="changePage(page)"
+          />
+        </div>
+
       </v-navigation-drawer>
   </div>
 </template>
 
 <script>
+import DrawerButton from "./DrawerButton"
+import {dataBus} from "../../main"
+
 export default {
+  components: {
+    DrawerButton
+  },
   props: {
-    pagetitle: {
-      type: String,
-      default: "System Administration"
-      //I can also pass functions as props!
-    },
-    pagesubtitle: String,
-    showServerStatus: Boolean,
-    showUserStatus: Boolean
+      
   },
   data: () => ({
     drawer: null,
-    searchInput: null,
+    pageTitles: [],
+    thePageTitle: '' 
   }),
+  created() {
+    dataBus.$on('titlesAdded', (pageTitles) => {
+      this.pageTitles = pageTitles;
+    });
+  },
   methods: {
-    showServers: function() {
-     this.$emit('showServers');
-    },
-    showUsers: function() {
-     this.$emit('showUsers', !this.showUserStatus);
-     //I can use a second argument to pass data...
+    changePage(pageName) {
+      this.thePageTitle = pageName;
+      dataBus.$emit('pageChange', pageName);
     }
   }
 }

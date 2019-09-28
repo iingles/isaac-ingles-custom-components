@@ -1,6 +1,6 @@
 <template>
      <v-row>
-        <v-col sm-1 
+        <!-- <v-col sm-1 
             v-for="(server, serverKey) in servers" :key="serverKey"
         >
             <v-card class="server-info">
@@ -10,15 +10,28 @@
                 <p>Status:<span class="server-status" :class="server.serverStatus">{{ server.serverStatus }}</span></p>
                 <p>Message:<span class="server-message">{{ server.serverMsg }}</span></p>
             </v-card>
-        </v-col>        
+        </v-col>         -->
     </v-row>
 </template>
 
 <script>
+import {dataBus} from "../../main"
+import { servers } from "./ServerList"
+
 export default {
-    props: {
-        servers: Array
+    components: {
+    
     },
+    props: {
+
+    },
+    created() {
+        // dataBus.$on('serversListed', (servers)=> {
+        //     console.log(servers);
+        // });
+        console.log(servers);
+    }
+
 }
 
 </script>

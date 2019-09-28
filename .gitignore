@@ -2,6 +2,7 @@
 node_modules
 /dist
 Start
+Finished
 
 # local env files
 .env.local
