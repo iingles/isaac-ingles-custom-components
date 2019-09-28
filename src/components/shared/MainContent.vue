@@ -1,27 +1,27 @@
 <template>
     <div><!--cannot do v-if on the root component; nesting another div -->
         <div v-for="(page,pageKey) in pages" :key="pageKey">
-            <v-row class="main-content" v-if="page.pageTitle == showPage">
+            <template class="main-content" v-if="page.pageTitle == showPage">
                 <component :is="page.templateName"  />
-            </v-row>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
 import ServerManagement from '../server/ServerManagement'
-import ServerList from '../server/ServerList'
 import UserList from '../administration/Users'
 import UserPrivileges from '../administration/Privileges'
+import AdminSettings from '../administration/AdminSettings'
 import { dataBus } from '../../main'
 
 
 export default {
     components: {
         ServerManagement,
-        ServerList,
         UserList,
-        UserPrivileges
+        UserPrivileges,
+        AdminSettings
     },
     props: {
 
@@ -38,9 +38,9 @@ export default {
             },
             {
                 id: 2,
-                pageTitle: 'Server List',
+                pageTitle: 'Administrative Settings',
                 pageContent: [],
-                templateName: 'ServerList',
+                templateName: 'AdminSettings',
                 showMe: false
             },
             {
