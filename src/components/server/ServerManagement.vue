@@ -1,42 +1,50 @@
 <template>
      <v-row sm-12>
-        <div
-            v-for="(server, serverKey) in servers" :key="serverKey"
-        >
-            <v-card class="server-info">
-                <v-card-title class="server-title">
-                    {{ server.serverName }}
-                </v-card-title>
-                <p>Status:<span class="server-status" :class="server.serverStatus">{{ server.serverStatus }}</span></p>
-                <p>Message:<span class="server-message">{{ server.serverMsg }}</span></p>
-                <v-btn
-                    @click="refreshServer(server.serverName)"
-                >
-                    Refresh
-                </v-btn>
-                <v-btn
-                    @click="optimizeServer(server.serverName)"
-                >
-                    Change Status
-                </v-btn>
-            </v-card>
-        </div>        
+        <template v-if="showDetails">
+            <ServerDetail 
+            @hidedetail="this.showDetails = !this.showDetails"
+            />
+        </template>
+        <template v-else>
+            <div
+                v-for="(server, serverKey) in servers" :key="serverKey"
+            >
+                <v-card class="server-info">
+                    <v-card-title class="server-title">
+                        {{ server.serverName }}
+                    </v-card-title>
+                    <p>Status:<span class="server-status" :class="server.serverStatus">{{ server.serverStatus }}</span></p>
+                    <p>Message:<span class="server-message">{{ server.serverMsg }}</span></p>
+                    <v-btn
+                        @click="refreshServer(server.serverName)"
+                    >
+                        Refresh
+                    </v-btn>
+                    <v-btn
+                        @click="showDetails = !showDetails"
+                    >
+                        View Details
+                    </v-btn>
+                </v-card>
+            </div>
+        </template>     
     </v-row>
 </template>
 
 <script>
 import {dataBus} from "../../main"
-import ServerList from "./ServerList"
+import ServerDetail from "./ServerDetail.vue"
 
 export default {
     components: {
-      ServerList
+      ServerDetail
     },
     props: {
-        
+        showDetails: false
     },
     data: () => ({
-        servers: dataBus.servers
+        servers: dataBus.servers,
+
     }),
     methods: {
         refreshServer: function(inServer) {
@@ -52,19 +60,6 @@ export default {
                 }
             }
         },
-        optimizeServer: function(inServer) {
-            var vm = this;
-            //get an updated list of the servers directly from the source array
-            let getServers = dataBus.servers
-            //update the global data in dataBus
-            for(let i = 0; i < getServers.length; i++) {
-                if(getServers[i].serverName == inServer) {
-                    if(getServers[i].serverStatus == 'Warning') {
-                        getServers[i].serverStatus = 'Optimal'
-                    } else { getServers[i].serverStatus = 'Warning' }
-                }
-            }
-        }
     }
 
 }
