@@ -16,6 +16,11 @@ const router = new VueRouter({
   //enable 'history' to get rid of the hash in the URL
   mode: 'history',
   routes: [
+    //default path should go to dashboard
+    {
+      path: '*',
+      redirect: '/'
+    },
     { 
       path: '/', 
       name: 'Dashboard',
