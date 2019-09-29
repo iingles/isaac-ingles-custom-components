@@ -17,20 +17,20 @@
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
     </v-app-bar>
-      <v-navigation-drawer 
-        app
-        fixed
-        v-model="drawer"
-      >
-      <v-btn @click="showServers()">
-        <template v-if="!showServerStatus">
-          Show Server Status
-        </template>
-        <template v-else>
-          Hide Server Status
-        </template>        
-      </v-btn>
-      </v-navigation-drawer>
+    <v-navigation-drawer 
+      app
+      fixed
+      v-model="drawer"
+    >
+    <v-btn @click="showServers()">
+      <template v-if="!showServerStatus">
+        Show Server Status
+      </template>
+      <template v-else>
+        Hide Server Status
+      </template>        
+    </v-btn>
+    </v-navigation-drawer>
   </div>
 </template>
 
