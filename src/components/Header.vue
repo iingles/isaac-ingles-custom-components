@@ -22,14 +22,10 @@
       fixed
       v-model="drawer"
     >
-    <v-btn @click="showServers()">
-      <template v-if="!showServerStatus">
-        Show Server Status
-      </template>
-      <template v-else>
-        Hide Server Status
-      </template>        
-    </v-btn>
+
+      <router-link to="/">Dashboard</router-link>    
+      <router-link to="/servermanagement">Server Management</router-link>    
+
     </v-navigation-drawer>
   </div>
 </template>

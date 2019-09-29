@@ -1,24 +1,19 @@
 <template>
     <div>
         <v-row class="main-content">
-            <ServerManagement 
-                v-if="showServerStatus"
-                :servers="this.servers"
-            />
+            <router-view></router-view>
         </v-row>
     </div>
 </template>
 
 <script>
-import ServerManagement from './ServerManagement'
 
 export default {
     components: {
-        ServerManagement
+  
     },
         props: {
-        servers: Array,
-        showServerStatus: Boolean
+
     }
 }
 </script>

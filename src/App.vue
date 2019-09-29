@@ -1,16 +1,9 @@
 <template>
   <v-app>
-    <Header 
-      :pagetitle='this.pagetitle'
-      :pagesubtitle='this.pagesubtitle'
-      :showServerStatus="this.showServerStatus"
-      @showServers="this.showServers"
-    />
+    <Header  />
     <v-content>
-      <MainContent 
-        :servers="this.servers"
-        :showServerStatus="this.showServerStatus"
-      />
+       <MainContent />  
+           
     </v-content>    
     <v-footer
       height="50"
@@ -33,7 +26,6 @@ export default {
     MainContent
   },
   data: () => ({
-    showServerStatus: false,
     servers: [
       { 
         serverName: 'Server One',
@@ -61,12 +53,18 @@ export default {
         serverMsg: 'Connection Error'
       },
     ],
-    pagetitle: 'Lorem Ipsum',
-    pagesubtitle: 'Dolor sit amet'
   }),
+  computed: {
+    username () {
+      // We will see what `params` is shortly
+      return this.$route.params.username
+    }
+  },
   methods: {
-    showServers: function() {
-      this.showServerStatus = !this.showServerStatus;
+    goBack () {
+      window.history.length > 1
+        ? this.$router.go(-1)
+        : this.$router.push('/')
     }
   }
 };

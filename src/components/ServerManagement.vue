@@ -1,6 +1,6 @@
 <template>
      <v-row>
-        
+
         <v-col
             v-for="(server, serverKey) in servers" :key="serverKey"
         >
