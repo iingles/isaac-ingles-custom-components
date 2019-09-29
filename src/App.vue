@@ -5,19 +5,14 @@
        <MainContent />  
            
     </v-content>    
-    <v-footer
-      height="50"
-      color="indigo darken-4" 
-      dark
-    >
-    Footer stuff
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Header from './components/Header';
-import MainContent from './components/MainContent';
+import Header from './components/shared/Header';
+import MainContent from './components/shared/MainContent';
+import Footer from './components/shared/Footer'
 
 export default {
   name: 'App',
