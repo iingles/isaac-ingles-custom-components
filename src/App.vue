@@ -26,37 +26,10 @@ export default {
     MainContent
   },
   data: () => ({
-    servers: [
-      { 
-        serverName: 'Server One',
-        serverStatus: 'Optimal',
-        serverMsg: 'No Messages'
-      },
-      { 
-        serverName: 'Server Two',
-        serverStatus: 'Warning',
-        serverMsg: 'Running Diagnostics'
-      },
-      { 
-        serverName: 'Server Three',
-        serverStatus: 'Optimal',
-        serverMsg: 'No Messages'
-      },
-      { 
-        serverName: 'Server Four',
-        serverStatus: 'Warning',
-        serverMsg: 'Maximum number of users'
-      },
-      { 
-        serverName: 'Server Five',
-        serverStatus: 'Error',
-        serverMsg: 'Connection Error'
-      },
-    ],
+    
   }),
   computed: {
     username () {
-      // We will see what `params` is shortly
       return this.$route.params.username
     }
   },

@@ -22,29 +22,17 @@
       fixed
       v-model="drawer"
     >
-
       <router-link to="/">Dashboard</router-link>    
       <router-link to="/servermanagement">Server Management</router-link>    
-
     </v-navigation-drawer>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    pagetitle: String,
-    pagesubtitle: String,
-    showServerStatus: Boolean
-  },
   data: () => ({
     drawer: null
   }),
-  methods: {
-    showServers: function() {
-     this.$emit('showServers');
-    }
-  }
 }
 </script>
 

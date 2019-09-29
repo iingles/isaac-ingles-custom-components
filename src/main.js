@@ -7,15 +7,14 @@ Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
+//Define where our components are for router
 const Dashboard = Vue.component('dashboard', require('./components/Dashboard.vue').default);
 const ServerManagement = Vue.component('servermanagemnet', require('./components/ServerManagement.vue').default);
 
-const routes = [
-  
 
-]
-
+//Routing map
 const router = new VueRouter({
+  //enable 'history' to get rid of the hash in the URL
   mode: 'history',
   routes: [
     { 
