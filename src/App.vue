@@ -2,8 +2,7 @@
   <v-app>
     <Header  />
     <v-content>
-       <MainContent />  
-           
+       <MainContent />           
     </v-content>    
     <Footer />
   </v-app>
