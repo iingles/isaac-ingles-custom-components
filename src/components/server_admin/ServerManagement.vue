@@ -1,7 +1,8 @@
 <template>
      <v-row>
         <v-col
-            v-for="(server, serverKey) in servers" :key="serverKey"
+            v-for="(server, serverKey) in servers" 
+            :key="serverKey"
         >
             <v-card class="server-info">
                 <v-card-title class="server-title">{{ server.serverName }}</v-card-title>
@@ -13,36 +14,12 @@
 </template>
 
 <script>
+import servers from '../../assets/servers.js'
+
 export default {
     data: () => ({
-        servers: [
-            { 
-                serverName: 'Server One',
-                serverStatus: 'Optimal',
-                serverMsg: 'No Messages'
-            },
-            { 
-                serverName: 'Server Two',
-                serverStatus: 'Warning',
-                serverMsg: 'Running Diagnostics'
-            },
-            { 
-                serverName: 'Server Three',
-                serverStatus: 'Optimal',
-                serverMsg: 'No Messages'
-            },
-            { 
-                serverName: 'Server Four',
-                serverStatus: 'Warning',
-                serverMsg: 'Maximum number of users'
-            },
-            { 
-                serverName: 'Server Five',
-                serverStatus: 'Error',
-                serverMsg: 'Connection Error'
-            },
-        ],
-    })
+        servers: servers
+    }),
 }
 </script>
 
