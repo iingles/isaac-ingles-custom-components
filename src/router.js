@@ -26,9 +26,8 @@ const routes = [
     },
 ]  
 
-
 export default new VueRouter({
     //enable 'history' to get rid of the hash in the URL
     mode: 'history',
     routes,
-  });
+});
