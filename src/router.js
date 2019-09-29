@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 //Define our components for router
 const Dashboard = Vue.component('dashboard', require('./components/Dashboard.vue').default);
-const ServerManagement = Vue.component('servermanagemnet', require('./components/ServerManagement.vue').default);
+const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement.vue').default);
 
 //Map routes
 const routes = [
