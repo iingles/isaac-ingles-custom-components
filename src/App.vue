@@ -23,11 +23,7 @@ export default {
   data: () => ({
     
   }),
-  computed: {
-    username () {
-      return this.$route.params.username
-    }
-  },
+  
   methods: {
     goBack () {
       window.history.length > 1

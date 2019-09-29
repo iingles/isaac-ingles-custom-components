@@ -4,8 +4,13 @@
             v-for="(server, serverKey) in servers" 
             :key="serverKey"
         >
-            <v-card class="server-info">
-                <v-card-title class="server-title">{{ server.serverName }}</v-card-title>
+            <v-card class="server-info"
+               to="/serverdetail/"
+            >
+                <v-card-title 
+                    primary-title
+                    class="server-title">{{ server.serverName }}
+                </v-card-title>
                 <p>Status:<span class="server-status" :class="server.serverStatus">{{ server.serverStatus }}</span></p>
                 <p>Message:<span class="server-message">{{ server.serverMsg }}</span></p>
             </v-card>
