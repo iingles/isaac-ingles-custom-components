@@ -11,20 +11,19 @@ Vue.config.productionTip = false
 const Dashboard = Vue.component('dashboard', require('./components/Dashboard.vue').default);
 const ServerManagement = Vue.component('servermanagemnet', require('./components/ServerManagement.vue').default);
 
-
-//Routing map
+//Map routes
 const router = new VueRouter({
   //enable 'history' to get rid of the hash in the URL
   mode: 'history',
   routes: [
     { 
       path: '/', 
-      name: 'dashboard',
+      name: 'Dashboard',
       component: Dashboard
     },
     { 
       path: '/servermanagement',
-      name: 'server_management',
+      name: 'Server Management',
       component: ServerManagement
     },
   ]  

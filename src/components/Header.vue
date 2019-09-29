@@ -10,7 +10,7 @@
           @click.stop="drawer = !drawer"
         ></v-app-bar-nav-icon>
 
-        <v-toolbar-title>{{ pagetitle }}</v-toolbar-title>
+        <v-toolbar-title>{{ this.$route.name }}</v-toolbar-title>
 
         <div class="flex-grow-1"></div>
         <v-btn icon>
