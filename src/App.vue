@@ -10,13 +10,14 @@
 
 <script>
 import Header from './components/shared/Header';
-import MainContent from './components/shared/MainContent';
 import Footer from './components/shared/Footer'
+import MainContent from './components/shared/MainContent';
 
 export default {
   name: 'App',
   components: {
     Header,
+    Footer,
     MainContent
   },
   data: () => ({
