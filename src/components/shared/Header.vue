@@ -22,8 +22,8 @@
       fixed
       v-model="drawer"
     >
-      <router-link to="/">Dashboard</router-link>    
-      <router-link to="/servermanagement">Server Management</router-link>    
+      <v-btn block to="/">Dashboard</v-btn>
+      <v-btn block to="/servermanagement">Server Management</v-btn>
     </v-navigation-drawer>
   </div>
 </template>
