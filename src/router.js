@@ -1,3 +1,12 @@
+/*
+  I decided to use Vue Router for this because it 
+  just made more sense for what I was trying to do.
+  I've never used it before, (I just adapted the router
+  tutorials to this project) so if I did something 
+  wrong, let me know.
+*/
+
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -26,14 +35,14 @@ const routes = [
       component: ServerManagement,
     },
     {
-      path: '/serverdetail/:id',      
-      children: [
-        {
-          path: 'serverone',
-          component: ServerDetail,
-        }
-      ]      
-    },
+    path: '/serverdetail/:id',      
+    children: [
+      {
+        path: 'serverone',
+        component: ServerDetail,
+      }
+    ]      
+  },
 ]  
 
 export default new VueRouter({
