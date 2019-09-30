@@ -31,6 +31,7 @@ export default {
 <style scoped>
     .server-info {
         padding: 10px;
+        width: 300px;
     }
     .Optimal {
         color: green;
