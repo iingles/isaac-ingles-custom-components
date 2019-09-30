@@ -1,7 +1,7 @@
 var servers = 
 [
     { 
-        serverName: 'Server_One',
+        serverName: 'Server One',
         serverStatus: 'Optimal',
         serverMsg: 'No Messages',
         id: 'serverone'

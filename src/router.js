@@ -37,10 +37,6 @@ const routes = [
       { path: '/serverdetail/:id', component: ServerDetail },
     ]
   },
-  // {
-  //   path: '/serverdetail/:name',
-  //   name: 'Server_Detail',     
-  // },
 ]  
 
 export default new VueRouter({
