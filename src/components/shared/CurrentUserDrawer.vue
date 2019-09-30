@@ -1,13 +1,13 @@
 <template>
     <div class="user-info">
-        <p>Logged in as: <a href="#">Username</a></p>
+        <p>Logged in as: <router-link to="#">Username</router-link></p>
         <v-img 
             class="img-center" 
             src="http://placekitten.com/200/200"
             max-width="200"
             max-height="200"
         ></v-img>
-        <p><a href="#">Logout</a></p>
+        <p><router-link to="#">Logout</router-link></p>
     </div>
 </template>
 
