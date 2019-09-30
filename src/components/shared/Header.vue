@@ -29,6 +29,7 @@
       fixed
       v-model="drawer"
     >
+      <CurrentUserDrawer />
       <v-btn block to="/">Dashboard</v-btn>
       <v-btn block to="/servermanagement">Server Management</v-btn>
     </v-navigation-drawer>
@@ -36,7 +37,12 @@
 </template>
 
 <script>
+import CurrentUserDrawer from "./CurrentUserDrawer"
+
 export default {
+  components: {
+    CurrentUserDrawer
+  },
   data: () => ({
     drawer: null
   }),
