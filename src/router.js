@@ -19,30 +19,28 @@ const ServerDetail = Vue.component('serverdetail', require('./components/server_
 
 //Map routes
 const routes = [
-    //default path should go to dashboard
-    {
-      path: '*',
-      redirect: '/'
-    },
-    { 
-      path: '/', 
-      name: 'Dashboard',
-      component: Dashboard
-    },
-    { 
-      path: '/servermanagement',
-      name: 'Server Management',
-      component: ServerManagement,
-    },
-    {
-    path: '/serverdetail/:id',      
-    children: [
-      {
-        path: 'serverone',
-        component: ServerDetail,
-      }
-    ]      
+  //default path should go to dashboard
+  {
+    path: '*',
+    redirect: '/'
   },
+  { 
+    path: '/', 
+    name: 'Dashboard',
+    component: Dashboard
+  },
+  { 
+    path: '/servermanagement',
+    name: 'Server_Management',
+    component: ServerManagement,
+    children: [
+      { path: '/serverdetail/:id', component: ServerDetail },
+    ]
+  },
+  // {
+  //   path: '/serverdetail/:name',
+  //   name: 'Server_Detail',     
+  // },
 ]  
 
 export default new VueRouter({
