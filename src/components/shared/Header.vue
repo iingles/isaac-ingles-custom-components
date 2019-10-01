@@ -13,13 +13,13 @@
         <v-toolbar-title>{{ this.$route.name }}</v-toolbar-title>
 
         <div class="flex-grow-1"></div>
-        <v-text-field
+        <!-- <v-text-field
         hide-details
         prepend-icon="mdi-magnify"
         single-line
         dark
         color="white"
-      ></v-text-field>
+      ></v-text-field> -->
       <v-btn icon>
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
