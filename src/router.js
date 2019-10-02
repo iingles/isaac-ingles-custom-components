@@ -41,6 +41,36 @@ const routes = [
        },
     ]
   },
+  { 
+    path: '/system', 
+    name: 'System',
+    component: Dashboard
+  },
+  { 
+    path: '/logs', 
+    name: 'Logs',
+    component: Dashboard
+  },
+  { 
+    path: '/services', 
+    name: 'Services',
+    component: Dashboard
+  },
+  { 
+    path: '/accounts', 
+    name: 'Accounts',
+    component: Dashboard
+  },
+  { 
+    path: '/diagnostics', 
+    name: 'Diagnostics',
+    component: Dashboard
+  },
+  { 
+    path: '/terminal', 
+    name: 'Terminal',
+    component: Dashboard
+  },
 ]  
 
 export default new VueRouter({
