@@ -11,9 +11,9 @@
                             :smooth="16"
                             :color="black"
                             :line-width="1"
-                            :value=[25,2,15,77,35,4,55,25,43,55,34]
+                            :value=[25,2,15,77,35,4,55,25,43,55,34,10,1,22,1,0,25,]
                             width="100"
-                            height="25"
+                            height="50"
                             auto-draw
                             stroke-linecap="round"
                             
