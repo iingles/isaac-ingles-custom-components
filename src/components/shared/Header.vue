@@ -6,9 +6,7 @@
       color="indigo darken-4"
       dark
       >
-        <v-app-bar-nav-icon
-          @click.stop="drawer = !drawer"
-        ></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title>{{ this.$route.name }}</v-toolbar-title>
 
@@ -20,9 +18,18 @@
         dark
         color="white"
       ></v-text-field> -->
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+      <v-menu>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            dark
+            icon
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <HeaderMenu  />
+      </v-menu>
     </v-app-bar>
     <v-navigation-drawer 
       app
@@ -52,13 +59,15 @@
 
 <script>
 import CurrentUserDrawer from "./CurrentUserDrawer"
+import HeaderMenu from "./HeaderMenu"
 
 export default {
   components: {
-    CurrentUserDrawer
+    CurrentUserDrawer,
+    HeaderMenu
   },
   data: () => ({
-    drawer: null
+    drawer: null,
   }),
 }
 </script>

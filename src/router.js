@@ -34,7 +34,11 @@ const routes = [
     name: 'Server Management',
     component: ServerManagement,
     children: [
-      { path: '/serverdetail/:id', component: ServerDetail },
+      { 
+        path: '/serverdetail/:id',
+        name: 'Server Detail',
+        component: ServerDetail
+       },
     ]
   },
 ]  
