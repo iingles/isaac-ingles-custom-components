@@ -4,18 +4,14 @@
             <v-col md="8" sm="12" xs="12">
             <h1>Server Detail</h1>
                 <v-card>
-                    <!-- 
-                        Grab the id from the URL and set the current server 
-                        There's probably a better way of doing this.
-                    -->
-                    {{ setCurrentServer() }}              
+                    <!-- Use the information passed into the server prop -->
                     <v-card-title> 
-                        {{ currentServer.serverName }}
+                        {{ server.serverName }}
                     </v-card-title>
-                    <p>{{ currentServer.serverStatus }}</p>
-                    <h3>Connections to {{ currentServer.serverName }}</h3>
+                    <p>{{ server.serverStatus }}</p>
+                    <h3>Connections to {{ server.serverName }}</h3>
                     <ul>
-                        <li v-for="(connection, cKey) in currentServer.connections" :key="cKey">
+                        <li v-for="(connection, cKey) in server.connections" :key="cKey">
                             {{ connection }}
                         </li>
                     </ul>
@@ -26,24 +22,15 @@
 </template>
 
 <script>
-import servers from '../../assets/servers.js'
-
 export default {
+    props: {
+        server: {}
+    },
     data: () => ({
-        currentServer: [],
-        currentId: ''
+        id: ''
     }),
-    methods: {
-        setCurrentServer: function() {
-            let vm = this
-            for(let i = 0; i < servers.length; i++) {
-                if(servers[i].id == vm.$route.params.id) {
-                    vm.currentServer = servers[i]
-                    vm.currentId = vm.$route.params.id
-                    break;
-                }
-            }
-        }
+    created() {
+       this.id = this.$route.params.id
     }
 }
 </script>

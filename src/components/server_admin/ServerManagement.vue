@@ -10,7 +10,8 @@
                         <v-card
                             class="server-info"
                             outlined
-                            :to="'/serverdetail/' + server.id"
+                            :to="{path:'/serverdetail/' + server.id, serverName: server.serverName}"
+                            @click="serverDetail = server"
                         >
                             <v-card-title 
                                 primary-title
@@ -25,7 +26,8 @@
                 </v-col>
                 <div class="flex-grow-1"></div>
                 <v-col md="8" sm="12" xs="12" class="server-detail">
-                    <router-view :servers="servers"></router-view>
+                    <!-- Bind the server data to the ServerDetail prop -->
+                    <router-view :server="serverDetail"></router-view>
                 </v-col>                                
             </v-row>
         </v-container>
@@ -34,10 +36,10 @@
 <script>
 //Put the servers info in its own js file; cleaner this way
 import servers from '../../assets/servers.js'
-//remember to use .once on $on stuffs!
 export default {
     data: () => ({
         servers: servers,
+        serverDetail: [],
     }),
 }
 </script>

@@ -31,7 +31,7 @@ const routes = [
   },
   { 
     path: '/servermanagement',
-    name: 'Server_Management',
+    name: 'Server Management',
     component: ServerManagement,
     children: [
       { path: '/serverdetail/:id', component: ServerDetail },
