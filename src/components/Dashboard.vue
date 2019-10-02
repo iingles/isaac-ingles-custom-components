@@ -11,9 +11,9 @@
                             :smooth="16"
                             :color="black"
                             :line-width="1"
-                            :value=[25,2,15,77,35,4,55,25,43,55,34,10,1,22,1,0,25,]
+                            :value=[25,2,15,77,35,4,55,25,43,55,34,10,1,22,1,0,25,5,4,1,25]
                             width="100"
-                            height="50"
+                            height="10"
                             auto-draw
                             stroke-linecap="round"
                             
@@ -27,7 +27,7 @@
                             :line-width="1"
                             :value=[1,5,4,1,25,10,1,22,1,0,25,1,15,1,10,1,25,14,20,10,22,25]
                             width="100"
-                            height='25'
+                            height='10'
                             auto-draw
                             stroke-linecap="round"
                         >
@@ -39,11 +39,23 @@
         <v-row>
             <v-card class="card-title">
                 <v-card-title>Alerts</v-card-title>
+                <v-list>
+                    <v-list-item>Lorem Ipsum: consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</v-list-item>
+                    <v-list-item>Excepteur sint: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </v-list-item>
+                    <v-list-item>Lorem Ipsum: velit esse cillum dolore eu fugiat nulla pariatur. </v-list-item>
+                    <v-list-item>Ut enim ad minim: consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</v-list-item>
+                </v-list>
             </v-card>
         </v-row>
         <v-row>
              <v-card class="card-title">
                 <v-card-title>Logs</v-card-title>
+                <v-list>
+                    <v-list-item>Lorem Ipsum: consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</v-list-item>
+                    <v-list-item>Excepteur sint: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </v-list-item>
+                    <v-list-item>Lorem Ipsum: velit esse cillum dolore eu fugiat nulla pariatur. </v-list-item>
+                    <v-list-item>Ut enim ad minim: consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</v-list-item>
+                </v-list>
             </v-card>
         </v-row>
     </div>
