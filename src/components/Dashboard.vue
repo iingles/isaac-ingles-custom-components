@@ -1,5 +1,5 @@
 <template>
-    <v-content>
+    <div>
         <h1>Dashboard</h1>
         <v-row>
             <v-card>
@@ -16,7 +16,7 @@
                 <v-card-title>Logs</v-card-title>
             </v-card>
         </v-row>
-    </v-content>
+    </div>
 </template>
 
 <script>
