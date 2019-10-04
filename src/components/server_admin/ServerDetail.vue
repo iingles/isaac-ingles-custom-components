@@ -2,10 +2,10 @@
     <v-container>
         <v-row>
             <v-col md="8" sm="12" xs="12">
-            <h1>Server Detail</h1>
-                <v-card>
+                <h1>Server Detail</h1>
+                <v-card class="server-info">
                     <!-- Use the information passed into the server prop -->
-                    <v-card-title> 
+                    <v-card-title class="detail-title"> 
                         {{ server.serverName }}
                     </v-card-title>
                     <p>{{ server.serverStatus }}</p>
@@ -36,5 +36,11 @@ export default {
 </script>
 
 <style scoped>
-
+    .server-info {
+        width: 100%;
+        padding: 10px;
+    }
+    .detail-title {
+        background: powderblue;
+    }
 </style>
