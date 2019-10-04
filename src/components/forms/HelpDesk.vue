@@ -30,7 +30,7 @@
                     </v-text-field>
                 </v-col>
                 <v-col md="12" sm="12" xs="12">
-                    <h2>Check all that apply:</h2>
+                    <h3>Check all that apply:</h3>
                     <!-- Normally, the v-model goes on the actual HTML input element -->
                     <v-checkbox
                         v-model="issues"
