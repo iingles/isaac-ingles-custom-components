@@ -13,11 +13,12 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 //Define our components for router
-const Dashboard = Vue.component('dashboard', require('./components/Dashboard.vue').default);
-const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement.vue').default);
+const Dashboard = Vue.component('dashboard', require('./components/Dashboard').default);
+const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement').default);
 const ServerDetail = Vue.component('serverdetail', require('./components/server_admin/ServerDetail').default);
 
-const HelpDesk = Vue.component('helpdesk', require('./components/header_menu/HelpDesk.vue').default);
+const HelpDesk = Vue.component('helpdesk', require('./components/header_menu/HelpDesk').default);
+const Settings = Vue.component('settings', require('./components/header_menu/Settings').default);
 
 //Map routes
 const routes = [
@@ -77,6 +78,11 @@ const routes = [
     path: '/helpform', 
     name: 'Help Form',
     component: HelpDesk
+  },
+  { 
+    path: '/settings', 
+    name: 'Settings',
+    component: Settings
   },
 ]  
 
