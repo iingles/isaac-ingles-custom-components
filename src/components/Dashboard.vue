@@ -2,6 +2,7 @@
     <div class="card-row">
         <h1>Dashboard</h1>
         <v-row>
+            <!-- I can set these up to get the data from elsewhere -->
             <v-col lg="12" md="12" sm="12" xs="12">
                 <v-card >
                     <v-card-title class="card-title">Statistics</v-card-title>
@@ -37,6 +38,10 @@
             </v-col>
         </v-row>
         <v-row>
+            <!-- 
+            Eventually I could pull all of these dynamically, maybe even
+            make them their own components -- depending on how complicated they get
+             -->
             <v-col>
                 <v-card class="card-title">
                     <v-card-title>Alerts</v-card-title>
