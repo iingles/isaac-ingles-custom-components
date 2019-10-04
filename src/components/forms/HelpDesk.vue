@@ -33,6 +33,7 @@
                     <v-textarea
                     label="Please describe your issue"
                     v-model="message"
+                    id="message"
                     >
                     </v-textarea>
                 </v-col>
