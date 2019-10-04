@@ -30,6 +30,31 @@
                     </v-text-field>
                 </v-col>
                 <v-col md="12" sm="12" xs="12">
+                    <h2>Check all that apply:</h2>
+                    <!-- Normally, the v-model goes on the actual HTML input element -->
+                    <v-checkbox
+                        v-model="issues"
+                        label="Server"
+                        value="Server"
+                    >
+                    </v-checkbox>
+                    <v-checkbox
+                        v-model="issues"
+                        label="Interface"
+                        value="Interface"
+                    >
+                    </v-checkbox>
+                    <v-checkbox
+                        v-model="issues"
+                        label="Analytics"
+                        value="Analytics"
+                    >
+                    </v-checkbox>
+                    <v-radio-group v-model="response" :mandatory="false">
+                        <h3>Would you like a response?</h3>
+                        <v-radio label="Yes" value="Yes"></v-radio>
+                        <v-radio label="No" value="No"></v-radio>
+                    </v-radio-group>
                     <v-textarea
                     label="Please describe your issue"
                     v-model="message"
@@ -38,6 +63,7 @@
                     </v-textarea>
                 </v-col>
             </v-row>
+            <v-btn>Submit</v-btn>
         </v-form>
     </v-container>    
 </template>
@@ -52,8 +78,11 @@ export default {
                 email:'',
             },
             message: '',
+            //keep our issues in an array
+            issues: [],
+            response: '',
         }
-    }
+    },
 }
 </script>
 
