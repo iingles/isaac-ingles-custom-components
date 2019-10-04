@@ -17,8 +17,13 @@ const Dashboard = Vue.component('dashboard', require('./components/Dashboard').d
 const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement').default);
 const ServerDetail = Vue.component('serverdetail', require('./components/server_admin/ServerDetail').default);
 
-const HelpDesk = Vue.component('helpdesk', require('./components/header_menu/HelpDesk').default);
+//Header Menu
 const Settings = Vue.component('settings', require('./components/header_menu/Settings').default);
+const HelpDesk = Vue.component('helpdesk', require('./components/header_menu/HelpDesk').default);
+const AppHistory = Vue.component('history', require('./components/header_menu/History').default);
+const Updates = Vue.component('updates', require('./components/header_menu/Updates').default);
+const About = Vue.component('about', require('./components/header_menu/About').default);
+
 
 //Map routes
 const routes = [
@@ -75,15 +80,31 @@ const routes = [
     component: Dashboard
   },
   { 
+    path: '/settings', 
+    name: 'Settings',
+    component: Settings
+  },
+  { 
+    path: '/history', 
+    name: 'History',
+    component: AppHistory
+  },
+  { 
+    path: '/updates', 
+    name: 'Updates',
+    component: Updates
+  },
+  { 
     path: '/helpform', 
     name: 'Help Form',
     component: HelpDesk
   },
   { 
-    path: '/settings', 
-    name: 'Settings',
-    component: Settings
+    path: '/about', 
+    name: 'About',
+    component: About
   },
+  
 ]  
 
 export default new VueRouter({
