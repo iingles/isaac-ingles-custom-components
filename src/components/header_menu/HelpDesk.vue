@@ -49,6 +49,11 @@
                         label="Analytics"
                         value="Analytics"
                     >
+                    <!--
+                        Behind the scenes, v-model binds to the "value" with v-bind (or :value)
+                        v-model also uses the @input listener; or @change if we use the "lazy"
+                        modifier.
+                    -->
                     </v-checkbox>
                     <v-radio-group v-model="response" :mandatory="false">
                         <h3>Would you like a response?</h3>
@@ -63,7 +68,7 @@
                     </v-textarea>
                 </v-col>
             </v-row>
-            <v-btn>Submit</v-btn>
+            <v-btn color="blue" dark>Submit</v-btn>
         </v-form>
     </v-container>    
 </template>

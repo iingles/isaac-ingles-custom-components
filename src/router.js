@@ -17,7 +17,7 @@ const Dashboard = Vue.component('dashboard', require('./components/Dashboard.vue
 const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement.vue').default);
 const ServerDetail = Vue.component('serverdetail', require('./components/server_admin/ServerDetail').default);
 
-const HelpDesk = Vue.component('helpdesk', require('./components/forms/HelpDesk.vue').default);
+const HelpDesk = Vue.component('helpdesk', require('./components/header_menu/HelpDesk.vue').default);
 
 //Map routes
 const routes = [
