@@ -32,6 +32,7 @@
                 <v-col md="12" sm="12" xs="12">
                     <v-textarea
                     label="Please describe your issue"
+                    v-model="message"
                     >
                     </v-textarea>
                 </v-col>
@@ -49,8 +50,7 @@ export default {
                 lastname: '',
                 email:'',
             },
-
-
+            message: '',
         }
     }
 }
