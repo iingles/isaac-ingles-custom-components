@@ -14,6 +14,9 @@ Vue.use(VueRouter)
 
 //Define our components for router
 const Dashboard = Vue.component('dashboard', require('./components/Dashboard').default);
+
+const Terminal = Vue.component('terminal', require('./components/Terminal').default);
+
 const ServerManagement = Vue.component('servermanagemnet', require('./components/server_admin/ServerManagement').default);
 const ServerDetail = Vue.component('serverdetail', require('./components/server_admin/ServerDetail').default);
 
@@ -77,7 +80,7 @@ const routes = [
   { 
     path: '/terminal', 
     name: 'Terminal',
-    component: Dashboard
+    component: Terminal
   },
   { 
     path: '/settings', 
