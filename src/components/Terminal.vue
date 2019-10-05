@@ -19,6 +19,9 @@ export default {
     components: {
         VueTerminal
     },
+    props: {
+        intro: String
+    },
     methods: {
       onCliCommand(data, resolve, reject){
         // typed command is available in data.text
