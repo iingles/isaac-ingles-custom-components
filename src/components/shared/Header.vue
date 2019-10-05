@@ -39,12 +39,12 @@
       <CurrentUserDrawer />
       <v-btn block to="/">Dashboard</v-btn>
       <v-btn block to="/servermanagement">Server Management</v-btn>
-      <v-btn block to="#">System</v-btn>
-      <v-btn block to="#">Logs</v-btn>
-      <v-btn block to="#">Services</v-btn>
-      <v-btn block to="#">Accounts</v-btn>
-      <v-btn block to="#">Diagnostics</v-btn>
-      <v-btn block to="#">Terminal</v-btn>
+      <v-btn block to="/system">System</v-btn>
+      <v-btn block to="/logs">Logs</v-btn>
+      <v-btn block to="/services">Services</v-btn>
+      <v-btn block to="/accounts">Accounts</v-btn>
+      <v-btn block to="/diagnostics">Diagnostics</v-btn>
+      <v-btn block to="/terminal">Terminal</v-btn>
       <!-- 
         >System
         >Logs
