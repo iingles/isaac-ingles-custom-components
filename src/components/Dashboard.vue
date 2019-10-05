@@ -10,7 +10,7 @@
                         <v-sparkline
                             :key="25"
                             :smooth="16"
-                            :color="black"
+                            :color="'black'"
                             :line-width="1"
                             :value=[25,2,15,77,35,4,55,25,43,55,34,10,1,22,1,0,25,5,4,1,25]
                             width="100"
