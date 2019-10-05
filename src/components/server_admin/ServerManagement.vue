@@ -4,7 +4,7 @@
                 <v-col md="3" sm='12' xs='12'>
                     <v-row 
                     v-for="server in servers" 
-                    :key="server.name"
+                    :key="server.id"
                     class="mb-10"
                     >
                         <v-card

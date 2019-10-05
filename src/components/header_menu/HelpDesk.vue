@@ -68,7 +68,12 @@
                     </v-textarea>
                 </v-col>
             </v-row>
-            <v-btn color="blue" dark>Submit</v-btn>
+            <!-- use prevent modifier to use Vue to handle the form -->
+            <v-btn 
+            color="blue" 
+            dark
+            @click.prevent="submitted"
+            >Submit</v-btn>
         </v-form>
     </v-container>    
 </template>
@@ -86,6 +91,13 @@ export default {
             //keep our issues in an array
             issues: [],
             response: '',
+            isSubmitted: false
+        }
+    },
+    methods: {
+        submitted() {
+            //Do form validation before submission
+            this.isSubmitted = true
         }
     },
 }
