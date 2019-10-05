@@ -20,7 +20,7 @@ export default {
         VueTerminal
     },
     props: {
-        intro: String
+        intro: "Lorem Ipsom Dolor Sit Amet..."
     },
     methods: {
       onCliCommand(data, resolve, reject){
