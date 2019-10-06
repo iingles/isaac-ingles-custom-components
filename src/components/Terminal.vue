@@ -12,7 +12,11 @@
 </template>
 
 <script>
-//Got this from https://www.npmjs.com/package/vue-terminal-ui
+/*
+    Got this plugin from https://www.npmjs.com/package/vue-terminal-ui
+    Still need to figure out how to actually make this functional; right
+    now it doesn't do anything but look like it can do things.
+*/
 import VueTerminal from 'vue-terminal-ui'
 
 export default {
